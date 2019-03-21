@@ -18,7 +18,9 @@ from matrix import *
   define a single triangle surface.
   ===================="""
 def add_polygon( polygons, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
-    pass
+    add_point(polygons,x0,y0,z0)
+    add_point(polygons,x1,y1,z1)
+    add_point(polygons,x2,y2,z2)
 
 """======== void draw_polygons() ==========
   Inputs:   struct matrix *polygons
@@ -29,7 +31,12 @@ def add_polygon( polygons, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
   lines connecting each points to create bounding triangles
   ===================="""
 def draw_polygons( polygons, screen, color ):
-    pass
+    i = 0
+    while i < len(polygons)-2:
+        draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
+        draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color)	
+        draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
+	i+=3
 
 
 def add_box( polygons, x, y, z, width, height, depth ):
