@@ -1,10 +1,33 @@
 from display import *
 from matrix import *
 
-
+"""======== void add_polygon() ==========
+  Inputs:   struct matrix *polygons
+            double x0
+            double y0
+            double z0
+            double x1
+            double y1
+            double z1
+            double x2
+            double y2
+            double z2
+  Returns:
+  Adds the vertices (x0, y0, z0), (x1, y1, z1)
+  and (x2, y2, z2) to the polygon matrix. They
+  define a single triangle surface.
+  ===================="""
 def add_polygon( polygons, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
     pass
 
+"""======== void draw_polygons() ==========
+  Inputs:   struct matrix *polygons
+            screen s
+            color c
+  Returns:
+  Goes through polygons 3 points at a time, drawing
+  lines connecting each points to create bounding triangles
+  ===================="""
 def draw_polygons( polygons, screen, color ):
     pass
 
