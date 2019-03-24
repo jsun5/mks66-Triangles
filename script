@@ -10,6 +10,8 @@ move
 150 200 0
 apply
 display
+save
+box.png
 #clear the edge matrix, test the sphere
 clear
 sphere
