@@ -1,5 +1,6 @@
 from display import *
 from matrix import *
+from gmath import *
 
 """======== void add_polygon() ==========
   Inputs:   struct matrix *polygons
@@ -37,9 +38,10 @@ def draw_polygons( polygons, screen, color ):
 		
     i = 0
     while i < len(polygons)-2:
-        draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
-        draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color) 
-        draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
+		if calculate_normal(polygons,i)[2]>0:
+			draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
+			draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color) 
+			draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
     i+=3
 
 

@@ -21,4 +21,10 @@ def cross_product(a, b):
 #Calculate the surface normal for the triangle whose first
 #point is located at index i in polygons
 def calculate_normal(polygons, i):
-    return None
+    leg1 = [polygons[i+1][0] - polygons[i][0],
+			polygons[i+1][1] - polygons[i][1],
+			polygons[i+1][2] - polygons[i][2]]
+	leg2 = [polygons[i+2][0] - polygons[i][0],
+			polygons[i+2][1] - polygons[i][1],
+			polygons[i+2][2] - polygons[i][2]]
+	return cross_product(leg1,leg2)
