@@ -35,13 +35,13 @@ def draw_polygons( polygons, screen, color ):
     if len(polygons) < 3:
         print("3 points please!")
         pass
-		
+        
     i = 0
     while i < len(polygons)-2:
-		if calculate_normal(polygons,i)[2]>0:
-			draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
-			draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color) 
-			draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
+        if calculate_normal(polygons,i)[2]>0:
+            draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
+            draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color) 
+            draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
     i+=3
 
 
