@@ -49,6 +49,8 @@ rotate
 y 80
 move
 300 300 0
-apply
+#apply
+torus
+0 0 0 300 300
 save
 img.png
