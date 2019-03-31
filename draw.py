@@ -32,17 +32,13 @@ def add_polygon( polygons, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
   lines connecting each points to create bounding triangles
   ===================="""
 def draw_polygons( polygons, screen, color ):
-    if len(polygons) < 3:
-        print("3 points please!")
-        pass
-        
     i = 0
     while i < len(polygons)-2:
-        if calculate_normal(polygons,i)[2]>0:
-            draw_line(polygons[i][0],polygons[i][1],polygons[i+1][0],polygons[i+1][1],screen,color)
-            draw_line(polygons[i+1][0],polygons[i+1][1],polygons[i+2][0],polygons[i+2][1],screen,color) 
-            draw_line(polygons[i+2][0],polygons[i+2][1],polygons[i][0],polygons[i][1],screen,color)
-    i+=3
+        if calculate_normal(polygons,i)[2] > 0:
+            draw_line(int(polygons[i][0]),int(polygons[i][1]),int(polygons[i+1][0]),int(polygons[i+1][1]),screen,color)
+            draw_line(int(polygons[i+1][0]),int(polygons[i+1][1]),int(polygons[i+2][0]),int(polygons[i+2][1]),screen,color) 
+            draw_line(int(polygons[i+2][0]),int(polygons[i+2][1]),int(polygons[i][0]),int(polygons[i][1]),screen,color)
+        i+=3
 
 
 def add_box( polygons, x, y, z, width, height, depth ):
@@ -110,7 +106,7 @@ def add_sphere(polygons, cx, cy, cz, r, step ):
             connect2 = (index+step)%(step*(step-1))
 
             if longt != step-2:pointGenerator(polygons,points,index,next,connect1)
-            if longt != 0:pointGenerator(polygons,points,next,connect1,connect2)
+            if longt != 0:pointGenerator(polygons,points,index,connect1,connect2)
             
 def pointGenerator(polygons,points,i,c1,c2):
     add_polygon(polygons, points[i][0],
